@@ -14,9 +14,7 @@ public class Kvadrator implements Runnable{
 
     @Override
     public void run() {
-        for (int num : ints) {
-            Consumer.mes(0,num,0);
-        }
+        Consumer.mes(0,ints[1],0);
     }
     }
 

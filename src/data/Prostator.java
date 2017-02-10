@@ -14,9 +14,7 @@ public class Prostator implements Runnable{
 
     @Override
     public void run() {
-        for (int num : ints) {
-            Consumer.mes(0,0,num);
-        }
+        Consumer.mes(0,0,ints[2]);
     }
 }
 

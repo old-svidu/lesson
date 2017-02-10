@@ -14,9 +14,7 @@ public class Cubator  implements Runnable{
 
     @Override
     public void run() {
-        for (int num : ints) {
-            Consumer.mes(num,0,0);
-        }
+        Consumer.mes(ints[0],0,0);
     }
 
 

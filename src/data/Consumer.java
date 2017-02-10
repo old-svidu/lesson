@@ -15,23 +15,23 @@ public class Consumer {
 
     public static void mes(int cub, int kva, int simp){
         if (cub!=0 && !lockCub.get()){
-            lockCub.set(true);
+            lockCub.compareAndSet(false,true);
             sum.getAndAdd((int)(Math.pow(cub,3)));
         }
         if (kva!=0 && !lockKva.get()){
-            lockKva.set(true);
+            lockKva.compareAndSet(false,true);;
             sum.getAndAdd((int)(Math.pow(kva,2)));
         }
         if (simp!=0 && !lockSimp.get()){
-            lockSimp.set(true);
+            lockSimp.compareAndSet(false,true);;
             sum.getAndAdd(simp);
         }
         if (lockCub.get()&&lockKva.get()&& lockSimp.get()){
             System.out.println(sum);
             sum.getAndSet(0);
-            lockSimp.set(false);
-            lockKva.set(false);
-            lockCub.set(false);
+            lockSimp.getAndSet(false);
+            lockKva.getAndSet(false);
+            lockCub.getAndSet(false);
         }
     }
 }
